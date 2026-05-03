@@ -1,0 +1,3 @@
+# MindBridge Coach - AI-Assisted Life Coaching Toolkit
+# Core dependencies
+python-dotenv>=1.0.0
