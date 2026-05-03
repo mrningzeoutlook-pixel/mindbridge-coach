@@ -1,0 +1,19 @@
+version: '3.8'
+
+services:
+  mindbridge-coach:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: mindbridge-coach
+    volumes:
+      # Mount local src for development
+      - ./src:/app/src:ro
+    environment:
+      - LOG_LEVEL=INFO
+    stdin_open: true
+    tty: true
+    command: python -m src.pipeline session --focus career-transition
+
+  # Alternative: Run reflection exercise
+  # command: python -m src.pipeline reflect --prompt weekly
